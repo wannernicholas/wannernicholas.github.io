@@ -1,0 +1,278 @@
+/* TIMELINE CONTAINER */
+
+.timeline-container {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding-right: 120px;
+}
+
+/* WRAPPER */
+
+.timeline-items {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  gap: 60px;
+}
+
+/* TIMELINE LINE */
+
+.timeline-line {
+  position: absolute;
+  right: 40px;
+  top: 0;
+
+  width: 3px;
+  height: 100%;
+
+  background: linear-gradient(to bottom, #4ea1ff, #7b61ff);
+
+  border-radius: 10px;
+}
+
+/* ITEM */
+
+.timeline-item {
+  position: relative;
+
+  margin-bottom: 60px;
+
+  opacity: 0.5;
+  transform: scale(0.98);
+
+  transition: all 0.35s ease;
+}
+
+/* ACTIVE ITEM */
+
+.timeline-item.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* =========================
+   TIMELINE BUTTON (PILL)
+   ========================= */
+
+.timeline-date {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  background: #1b2230;
+  color: white;
+
+  border: 1px solid #4ea1ff;
+  border-radius: 30px;
+
+  padding: 12px 20px;
+
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 4px;
+
+  z-index: 2;
+
+  transition:
+    background 0.3s ease,
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.3s ease,
+    padding 0.3s ease,
+    border-radius 0.3s ease;
+}
+
+/* HOVER */
+
+.timeline-date:hover {
+  background: #4ea1ff;
+  transform: translateX(-5px) scale(1.01);
+}
+
+/* TEXT TRANSITIONS */
+
+.timeline-date .summary,
+.timeline-date .dates {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* DEFAULT STATE */
+
+.timeline-date .summary {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: white;
+
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-date .dates {
+  font-size: 0.8rem;
+  color: #9aa4b2;
+
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   ACTIVE (CLICKED) STATE
+   ========================= */
+
+.timeline-item.active .timeline-date {
+
+  /* 🔥 shrink pill */
+  padding: 10px 16px;
+  border-radius: 20px;
+
+  /* center single-line layout */
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+
+  /* stronger emphasis */
+  background: #4ea1ff;
+  transform: translateX(-6px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(78, 161, 255, 0.25);
+}
+
+/* REMOVE SUMMARY COMPLETELY FROM LAYOUT */
+
+.timeline-item.active .timeline-date .summary {
+  opacity: 0;
+  transform: translateY(-6px);
+
+  width: 0;
+  height: 0;
+
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+
+}
+
+/* MAKE DATE TAKE FULL SPACE */
+
+.timeline-item.active .timeline-date .dates {
+  font-size: 0.9rem;
+  color: white;
+
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   CONTENT CARD
+   ========================= */
+
+.timeline-content {
+  background: #161b22;
+
+  border: 1px solid #2f3b52;
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(180px, 300px)
+    minmax(0, 1fr);
+
+  align-items: stretch;
+
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+
+  padding: 0;
+
+  transition:
+    max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    padding 0.4s ease;
+}
+
+/* OPEN STATE */
+
+.timeline-content.active {
+  max-height: 2000px;
+  opacity: 1;
+  transform: translateY(0);
+  padding: 20px;
+}
+
+/* IMAGE */
+
+.timeline-content img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  padding: 20px;
+
+  background: #0f1117;
+
+  border-radius: 14px;
+}
+
+.timeline-content.no-image {
+  grid-template-columns: 1fr;
+}
+
+/* TEXT */
+
+.content-text {
+  padding: 20px;
+}
+
+.content-text h2 {
+  margin-bottom: 15px;
+  color: #4ea1ff;
+}
+
+.content-text p {
+  line-height: 1.7;
+  color: #d0d7e2;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+  .timeline-container {
+    padding-right: 0;
+  }
+
+  .timeline-line {
+    left: 20px;
+    right: auto;
+  }
+
+  .timeline-date {
+    position: relative;
+    left: 50px;
+    margin-bottom: 20px;
+  }
+
+  .timeline-content {
+    grid-template-columns: 1fr;
+    margin-left: 50px;
+  }
+
+  .timeline-content img {
+    height: 220px;
+  }
+}
