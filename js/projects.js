@@ -4,9 +4,9 @@ const projects = [
         title: "Portfolio Website",
 
         description:
-            "A modern responsive portfolio website built using HTML, CSS, and JavaScript featuring reusable components and sleek UI animations.",
+            "A modern responsive portfolio website built using HTML, CSS, and JavaScript featuring reusable components and UI animations.",
 
-        images: ["images/projects/site.png"],
+        media: ["images/projects/site.png"],
 
         tags: [
             "HTML",
@@ -23,30 +23,62 @@ const projects = [
     },
 
     {
-        title: "Project 2",
+        title: "Book It! Game",
 
         description:
-            "Wow another project gotta fill in this information in the future.",
+            "A 3D first person stealth horror game made with a friend for a Halloween game jam. Explore a abandoned library to find all the magic books while avoiding a monster by ducking under tables.",
 
-        images: ["images/project2.jpg"],
+        media: ["images/projects/book it/title.png", "images/projects/book it/screenshot.png"],
 
         tags: [
-            "Python",
-            "Flask",
-            "TensorFlow"
+            "C#",
+            "Unity"
         ],
 
         links: [
             {
                 label: "GitHub",
-                url: "#"
+                url: "https://github.com/wannernicholas/Horror-Game"
             },
             {
-                label: "Documentation",
-                url: "#"
+                label: "Itch.io",
+                url: "https://thenick451.itch.io/book-it"
             }
         ],
-    }
+    },
+
+    {
+        title: "Shaders",
+
+        description:
+            "My experiments playing around with creating shaders using OpenGL Shading Language. I really enjoy creating them as it blends coding and art together seamlessly and there are always new techniques that can be learned and applied.",
+
+        media: ["images/projects/shaders/overthemoon.mp4", "images/projects/shaders/outrun.webm", "images/projects/shaders/torrid.webm", "images/projects/shaders/domainwarp.webm"],
+
+        tags: [
+            "GLSL",
+        ],
+
+        links: [
+            {
+                label: "GitHub",
+                url: "https://github.com/wannernicholas/Learning-Shaders"
+            }
+        ],
+    },
+
+    {
+        title: "Untitled Work in Progress Game",
+
+        description:
+            "A game I'm currently working independently on. The goal will be to travel from island to island to buy and sell goods at the best value while meeting multiple characters along the way.",
+
+        media: ["images/projects/shipping game/dialog.png", "images/projects/shipping game/farming.png", "images/projects/shipping game/trading.png", "images/projects/shipping game/trading2.png"],
+
+        tags: [
+            "C#", "Godot"
+        ],
+    },
 ];
 
 document.addEventListener("DOMContentLoaded", async () => {

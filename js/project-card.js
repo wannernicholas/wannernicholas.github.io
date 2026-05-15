@@ -14,7 +14,6 @@ async function loadProjectCard(project) {
     const card =
         temp.firstElementChild;
 
-
     if (project.reverse) {
         card.classList.add("reverse");
     }
@@ -28,66 +27,99 @@ async function loadProjectCard(project) {
     const nextButton =
         card.querySelector(".next");
 
-    let currentImage = 0;
+    let currentIndex = 0;
 
-    // Build images into track
-    project.images.forEach(src => {
+    const mediaElements = [];
 
-        const img =
-            document.createElement("img");
+    function createMediaElement(src) {
 
-        img.src = src;
-        img.alt = project.title;
+        const ext = src.split(".").pop().toLowerCase();
 
-        track.appendChild(img);
+        let el;
 
+        if (ext === "mp4" || ext === "webm") {
+
+            el = document.createElement("video");
+
+            el.src = src;
+            el.muted = true;
+            el.loop = true;
+            el.autoplay = true;
+            el.playsInline = true;
+            el.preload = "metadata";
+
+        } else {
+
+            el = document.createElement("img");
+            el.src = src;
+            el.alt = project.title;
+        }
+
+        return el;
+    }
+
+    // Build media into track
+    project.media.forEach(src => {
+
+        const el = createMediaElement(src);
+
+        mediaElements.push(el);
+        track.appendChild(el);
     });
 
-    const hasMultipleImages =
-        project.images.length > 1;
+    const hasMultiple =
+        project.media.length > 1;
 
-    if (!hasMultipleImages) {
-
+    if (!hasMultiple) {
         prevButton.style.display = "none";
         nextButton.style.display = "none";
-
     }
 
     function updateSlide() {
 
+        // Move track
         track.style.transform =
-            `translateX(-${currentImage * 100}%)`;
+            `translateX(-${currentIndex * 100}%)`;
 
+        // Pause all videos except active one
+        mediaElements.forEach((el, i) => {
+
+            if (el.tagName === "VIDEO") {
+
+                if (i === currentIndex) {
+                    el.play().catch(() => { });
+                } else {
+                    el.pause();
+                }
+            }
+        });
     }
 
     updateSlide();
 
-    if (hasMultipleImages) {
+    if (hasMultiple) {
 
         prevButton.addEventListener("click", () => {
 
-            currentImage--;
+            currentIndex--;
 
-            if (currentImage < 0) {
-                currentImage = project.images.length - 1;
+            if (currentIndex < 0) {
+                currentIndex = project.media.length - 1;
             }
 
             updateSlide();
-
         });
 
         nextButton.addEventListener("click", () => {
 
-            currentImage++;
+            currentIndex++;
 
-            if (currentImage >= project.images.length) {
-                currentImage = 0;
+            if (currentIndex >= project.media.length) {
+                currentIndex = 0;
             }
 
             updateSlide();
-
         });
-
     }
 
     card.querySelector(".project-title")
@@ -107,25 +139,24 @@ async function loadProjectCard(project) {
         span.textContent = tag;
 
         tagsContainer.appendChild(span);
-
     });
+
     const linksContainer =
         card.querySelector(".project-links");
 
-    project.links.forEach(link => {
+    if (project.links != null && project.links.length > 0) {
+        project.links.forEach(link => {
 
-        const a =
-            document.createElement("a");
+            const a =
+                document.createElement("a");
 
-        a.href = link.url;
+            a.href = link.url;
+            a.target = "_blank";
+            a.textContent = link.label;
 
-        a.target = "_blank";
-
-        a.textContent = link.label;
-
-        linksContainer.appendChild(a);
-
-    });
+            linksContainer.appendChild(a);
+        });
+    }
 
     document.querySelector(".projects-container")
         .appendChild(card);
