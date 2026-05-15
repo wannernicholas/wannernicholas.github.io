@@ -26,7 +26,7 @@ const projects = [
         title: "Book It! Game",
 
         description:
-            "A 3D first person stealth horror game made with a friend for a Halloween game jam. Explore a abandoned library to find all the magic books while avoiding a monster by ducking under tables.",
+            "A 3D first person stealth horror game co-created with a friend for a Halloween game jam. Explore an abandoned library to find all the magic books while avoiding a monster by ducking under tables.",
 
         media: ["images/projects/book it/title.png", "images/projects/book it/screenshot.png"],
 
@@ -51,7 +51,7 @@ const projects = [
         title: "Shaders",
 
         description:
-            "My experiments playing around with creating shaders using OpenGL Shading Language. I really enjoy creating them as it blends coding and art together seamlessly and there are always new techniques that can be learned and applied.",
+            "My experiments playing around with creating shaders using OpenGL Shading Language. I really enjoy creating them they blend coding and art together seamlessly, and there are always new techniques to be learned and applied.",
 
         media: ["images/projects/shaders/overthemoon.mp4", "images/projects/shaders/outrun.webm", "images/projects/shaders/torrid.webm", "images/projects/shaders/domainwarp.webm"],
 
@@ -71,7 +71,7 @@ const projects = [
         title: "Untitled Work in Progress Game",
 
         description:
-            "A game I'm currently working independently on. The goal will be to travel from island to island to buy and sell goods at the best value while meeting multiple characters along the way.",
+            "I'm currently working independently on this game. The goal will be to travel from island to island to buy and sell goods at the best value while meeting multiple characters along the way.",
 
         media: ["images/projects/shipping game/dialog.png", "images/projects/shipping game/farming.png", "images/projects/shipping game/trading.png", "images/projects/shipping game/trading2.png"],
 
