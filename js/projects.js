@@ -68,7 +68,7 @@ const projects = [
     },
 
     {
-        title: "Untitled Work in Progress Game",
+        title: "Work in Progress Shipping Game",
 
         description:
             "I'm currently working independently on this game. The goal will be to travel from island to island to buy and sell goods at the best value while meeting multiple characters along the way.",
