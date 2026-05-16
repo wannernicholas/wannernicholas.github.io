@@ -11,7 +11,8 @@ async function loadTimelineItem(data) {
             data.description.map(p => `<p>${p}</p><br>`).join("")
         )
         .replaceAll("{{noImage}}", data.image ? "" : "no-image")
-        .replace("{{image}}", data.image ? `<img src="${data.image}" alt="">` : "");
+        .replace("{{image}}", data.image ? `<img src="${data.image}" alt="">` : "")
+        .replace("{{tags}}", data.tags ? data.tags.map(tag => `<span>${tag}</span>`).join("") : "");
 
     document.querySelector(".timeline-items").insertAdjacentHTML("beforeend", template);
 }
