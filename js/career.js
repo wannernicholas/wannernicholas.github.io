@@ -7,7 +7,7 @@ const timelineData = [
       "I worked to create a standalone application using .NET to interface with TLM to assist labs with onboarding. Many labs had complex templates designed in Excel sheets. The tool allowed the Excel sheets to be quickly converted to the equivalent TLM data models and imported using external API endpoints. This cut the manual labor time to make and import extensive changes to templates from hours to minutes. For this application, I collaborated closely with our business partners to implement additional validation, add support for features that were under simultaneous development in TLM, and provide immediate support as problems were identified.",
       "Additionally, I was granted ownership of CICVAD, a web application used as a management system for external suppliers to submit designs and proposals for components. CICVAD's tech stack consisted of a Java back end with Spring Boot and Maven, Angular front end, and a MS SQL database. A GM employee would then review the submitted component and request changes or approve it. As the designated owner for CICVAD, I was responsible for rotating software keys, fixing bugs, and upgrading dependencies to match with GM's technical standards. The largest upgrade performed was the removal of exorbitant renewal fees by migrating the application from being hosted on a deprecated external platform to an in-house platform."],
     image: "images/career/gm-logo.webp",
-    tags: ["Java", "Angular", "Spring Boot", "Quarkus", "Maven", "Azure", ".NET"]
+    tags: ["Java", "Angular", "Spring Boot", "Quarkus", "Maven", "Azure", ".NET", "PostgreSQL", "MS SQL"]
   },
   {
     role: "Software Developer 1",
@@ -16,7 +16,7 @@ const timelineData = [
     description: ["When I first started at General Motors, I worked on the Janus project. The tech stack involved a Java back end with Spring Boot and Maven, Angular front end with Material css, and a PostgreSQL database. It enabled creating a plan to manage a project from start to finish and track all tasks needed for completion. I improved many different facets of Janus including increasing test automation, expanding the in-application reporting feature, and enabling users from outside the company to visit Janus.",
       "A second web application project I developed for was Test Lifecycle Management (TLM). The tech stack was comprised of a Java back end with Quarkus and Maven, Angular front end with Material css, and a PostgreSQL database. TLM was similar to Janus, however TLM focused primarily on creating customized requests to be sent to labs and tracking the evolving status of the request. While working on TLM, I focused primarily on the feature for 'attribute groups', which allowed users to create predefined groups of fields to be added to requests that could be shared across labs. For example, an attribute group could be used to represent a selectable test dummy and configure a variety of its details. Attribute groups were a cornerstone of the application as they were widely adopted to represent a variety of different components and data configurations."],
     image: "images/career/gm-logo.webp",
-    tags: ["Java", "Angular", "Spring Boot", "Quarkus", "Maven", "Cloud Foundry"]
+    tags: ["Java", "Angular", "Spring Boot", "Quarkus", "Maven", "Cloud Foundry", "PostgreSQL"]
   },
   {
     role: "Computer Science Grader",
