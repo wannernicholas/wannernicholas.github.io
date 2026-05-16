@@ -51,7 +51,7 @@ const projects = [
         title: "Shaders",
 
         description:
-            "My experiments playing around with creating shaders using OpenGL Shading Language. I really enjoy creating them they blend coding and art together seamlessly, and there are always new techniques to be learned and applied.",
+            "My experiments playing around with creating shaders using OpenGL Shading Language. I really enjoy creating shaders and experimenting. Shaders blend coding and art together seamlessly, and there are always new techniques to be learned and applied.",
 
         media: ["images/projects/shaders/overthemoon.mp4", "images/projects/shaders/outrun.webm", "images/projects/shaders/torrid.webm", "images/projects/shaders/domainwarp.webm"],
 
